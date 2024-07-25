@@ -24,7 +24,8 @@ require("lazy").setup({
 	{ import = "pavlydev/fugitive"		},
 	{ import = "pavlydev/comment"		},
 	{ import = "pavlydev/which-key"		},
-	
+	{ import = "pavlydev/todo_comments"	},
+
 	-- LSP config
 	{
 		'neovim/nvim-lspconfig',
