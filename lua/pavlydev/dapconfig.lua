@@ -5,13 +5,25 @@ return {
 		--"theHamsta/nvim-dap-virtual-text",
 		"nvim-neotest/nvim-nio",
 		"williamboman/mason.nvim",
+        "mfussenegger/nvim-dap-python",
 	},
 	config = function()
 		local dap = require "dap"
 		local ui = require "dapui"
 
+        require("dap-python").setup("python")
+        table.insert(dap.configurations.python, {
+          type = 'python',
+          request = 'launch',
+          name = 'python launch configuration',
+          program = function()
+              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '/', 'file')
+          end,
+          cwd = '${workspaceFolder}',
+          stopOnEntry = false,
+        })
+
 		require("dapui").setup()
-		local debugpy = vim.fn.exepath "debugpy"
 		local codelldb = vim.fn.exepath "codelldb"
 
 		if codelldb ~= "" then

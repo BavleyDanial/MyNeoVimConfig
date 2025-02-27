@@ -28,6 +28,7 @@ require("lazy").setup({
 	{ "ThePrimeagen/vim-be-good" },
 	{ import = "pavlydev/lspconfig"},
 	{ import = "pavlydev/dapconfig"},
+	{ import = "pavlydev/flutter"},
 	{ -- Autocompletion
 		'hrsh7th/nvim-cmp',
 		'L3MON4D3/LuaSnip',

@@ -56,7 +56,6 @@ capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp'
 local servers = {
 	-- clangd = {},
 	-- gopls = {},
-	-- pyright = {},
 	rust_analyzer = {
 		on_attach = function(client, bufnr)
 			vim.lsp.inlay_hint.enable(bufnr)
