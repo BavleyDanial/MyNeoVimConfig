@@ -44,9 +44,16 @@ vim.opt.colorcolumn = "80"
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-	desc = 'Highlight when yanking (copying) text',
-	group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
+
+if vim.g.neovide then
+    vim.g.neovide_scroll_animation_length = 0.13
+    vim.g.neovide_cursor_animation_length = 0.13
+    vim.g.neovide_refresh_rate = 170
+    vim.g.neovide_refresh_rate_idle = 5
+end

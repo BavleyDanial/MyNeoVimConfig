@@ -29,6 +29,7 @@ require("lazy").setup({
 	{ import = "pavlydev/lspconfig"},
 	{ import = "pavlydev/dapconfig"},
 	{ import = "pavlydev/flutter"},
+	--{ import = "pavlydev/status_bar"},
 	{ -- Autocompletion
 		'hrsh7th/nvim-cmp',
 		'L3MON4D3/LuaSnip',
