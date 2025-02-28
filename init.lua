@@ -57,4 +57,5 @@ if vim.g.neovide then
     vim.g.neovide_refresh_rate = 170
     vim.g.neovide_refresh_rate_idle = 5
     vim.g.neovide_cursor_trail_size = 0.4
+    vim.g.neovide_fullscreen = true
 end
