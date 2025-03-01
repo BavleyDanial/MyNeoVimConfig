@@ -25,28 +25,20 @@ require("lazy").setup({
     { import = "pavlydev/comment"       },
     { import = "pavlydev/which-key"     },
     { import = "pavlydev/todo_comments" },
-    { "ThePrimeagen/vim-be-good"        },
     { import = "pavlydev/lspconfig"     },
     { import = "pavlydev/dapconfig"     },
-    { import = "pavlydev/flutter"       },
     { import = "pavlydev/status_bar"    },
+    { "ThePrimeagen/vim-be-good"        },
     { -- Autocompletion
         'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
         {
             dependencies = {
-                -- Snippet Engine & its associated nvim-cmp source
                 build = (function()
-                    -- Build Step is needed for regex support in snippets.
-                    -- This step is not supported in many windows environments.
-                    -- Remove the below condition to re-enable on windows.
                     return 'make install_jsregexp'
                 end)(),
             },
             'saadparwaiz1/cmp_luasnip',
-            -- Adds other completion capabilities.
-            --  nvim-cmp does not ship with all sources by default. They are split
-            --  into multiple repos for maintenance purposes.
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-path',
         },
