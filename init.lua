@@ -15,8 +15,12 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("UserProfile") .. "/.vim/undodir"
+
+vim.opt.undodir = (vim.loop.os_uname().sysname:match("Windows")
+                    and os.getenv("UserProfile") .. "/.vim/undodir")
+                    or os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.mouse = 'a'
